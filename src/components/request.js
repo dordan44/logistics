@@ -12,7 +12,7 @@ export default function Request({request}) {
   }
   return (
     <div className={styles.card}>
-      {request.status}
+      סטטוס - {request.status}
       <span className={styles.subtitle}>
         חמ״ל: <span className={styles.text}>{request.room}</span>
       </span>
@@ -20,6 +20,7 @@ export default function Request({request}) {
         <span className={styles["items-title"]}>פריטים:</span>
         {request.items && request.items.map(item => <RequestItem item={item} key={item._id}/>)}
       </div>
+        <span className={styles.date}>{new Date(request.createdAt).toLocaleDateString()} - {new Date(request.createdAt).toLocaleTimeString()}</span>
       <CheckIcon onClick={() => handleCompleted(request._id)}/>
     </div>
   );

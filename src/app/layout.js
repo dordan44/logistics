@@ -2,7 +2,7 @@ import { Heebo } from "next/font/google";
 import './globals.css'
 
 const heebo = Heebo({
-  weight: ['400', '700'],
+  weight: ['300', '400', '700'],
   style: 'normal',
   subsets: ['latin'],
   display: 'swap',

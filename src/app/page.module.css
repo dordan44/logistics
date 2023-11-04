@@ -42,7 +42,12 @@
   font-size: 17px;
   font-weight: 700;
 }
-
+.date {
+  display: block;
+  font-size: 14px;
+  font-weight: 300;
+  margin-top: 10px;
+}
 @media (prefers-color-scheme: dark) {
   .card {
     background-color: #dfdfdf29;
