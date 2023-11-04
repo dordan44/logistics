@@ -7,7 +7,7 @@ export default function Home() {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    fetch("https://api.bandwatch.co.il/done")
+    fetch("https://api.bandwatch.co.il/requests/done")
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
