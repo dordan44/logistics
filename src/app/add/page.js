@@ -9,8 +9,7 @@ export default function AddPage() {
   const [message, setMessage] = useState("");
     const submitHandler = async (e) => {
         e.preventDefault();
-        // const request = await fetch('https://api.bandwatch.co.il/requests', {
-        const request = await fetch('http://localhost:4000/requests', {
+        const request = await fetch('https://api.bandwatch.co.il/requests', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ room, items })
