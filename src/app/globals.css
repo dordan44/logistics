@@ -134,6 +134,13 @@ input, select, option {
 input::placeholder {
   color: #313131;
 }
+.add-item-button {
+  display: inline;
+  padding: 8px;
+  font-size: 14px;
+  max-width: 140px;
+  border-radius: 60px;
+}
 button {
   padding: 12px;
   background-color: #31313123;
@@ -157,9 +164,20 @@ button:hover {
 .inputs-row input[type=number] {
   max-width: 25%;
 }
+.loader {
+  color: #313131;
+}
+.form-message {
+  display: block;
+  text-align: center;
+  font-weight: 700;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+  .loader {
+    color: #fff;
   }
   input::placeholder, input, select, option {
     color: #ffffffbf;

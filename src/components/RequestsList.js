@@ -17,7 +17,7 @@ export default function RequestsList() {
       .catch((error) => setItems(error));
   }, []);
   return (
-    isLoading && <div>Loading...</div>,
+    isLoading && <div className="loader">טוען...</div>,
     items && items.map((item) => <RequestItem request={item} key={item._id} />)
   );
 }

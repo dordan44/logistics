@@ -4,19 +4,23 @@ import Image from "next/image";
 import { useState } from "react";
 
 export default function AddPage() {
-  const [items, setItems] = useState([{title: '', quantity: 1}]);
-  const [room, setRoom] = useState()
-    const submitHandler = (e) => {
+  const [items, setItems] = useState([{title: '', quantity: ''}]);
+  const [room, setRoom] = useState();
+  const [message, setMessage] = useState("");
+    const submitHandler = async (e) => {
         e.preventDefault();
-        fetch('https://api.bandwatch.co.il/requests', {
+        const request = await fetch('https://api.bandwatch.co.il/requests', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ room, items })
       })
+      if(request.ok) {
+        setMessage("בקשתך התקבלה בהצלחה")
+      }
       };
       const handleAddItem = () => {
         console.log(JSON.stringify({ room, items }))
-        setItems([...items, { title: '', quantity: 1 }]);
+        setItems([...items, { title: '', quantity: '' }]);
       };
       const handleItemChange = (index, e) => {
         const newItems = [...items];
@@ -52,8 +56,9 @@ export default function AddPage() {
           </div>
           )
         })}
-        <button type="button" onClick={handleAddItem}>+</button>
+        <button className="add-item-button" type="button" onClick={handleAddItem}>+ הוספת פריט</button>
         <button type="submit">שליחה</button>
+        {message && <span className="form-message">{message}</span>}
       </form>
         </main>
     )
