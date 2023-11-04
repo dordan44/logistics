@@ -8,7 +8,7 @@ export default function AddPage() {
   const [room, setRoom] = useState()
     const submitHandler = (e) => {
         e.preventDefault();
-        fetch('http://localhost:4000/requests', {
+        fetch('https://api.bandwatch.co.il/requests', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ room, items })
