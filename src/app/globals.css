@@ -172,6 +172,25 @@ button:hover {
   text-align: center;
   font-weight: 700;
 }
+.btn {
+  display: block;
+  width: 80%;
+  text-align: center;
+  padding: 12px;
+  background-color: #31313123;
+  border: 1px solid #31313171;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  font-family: inherit;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -193,6 +212,16 @@ button:hover {
     color: #313131;
   }
   button:hover {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+  }
+  .btn {
+    background-color: #fff;
+    border: 1px solid #fff;
+    color: #313131;
+  }
+  .btn:hover {
     background-color: transparent;
     border: 1px solid #fff;
     color: #fff;
